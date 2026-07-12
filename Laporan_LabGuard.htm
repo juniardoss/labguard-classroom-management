@@ -1,0 +1,164 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="utf-8">
+<title>Laporan LabGuard Classroom Management</title>
+<!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+</w:WordDocument>
+</xml><![endif]-->
+<style>
+@page Section1 {
+  size: 21cm 29.7cm; /* A4 */
+  margin: 3cm 3cm 3cm 4cm; /* atas kanan bawah kiri (format skripsi 4-3-3-3) */
+  mso-page-orientation: portrait;
+}
+div.Section1 { page: Section1; }
+body {
+  font-family: "Times New Roman", serif;
+  font-size: 12pt;
+  line-height: 1.5;
+  text-align: justify;
+}
+h1.bab {
+  text-align: center;
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 4pt;
+  page-break-before: always;
+}
+h1.judulbab {
+  text-align: center;
+  font-size: 14pt;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 24pt;
+}
+h2 { font-size: 12pt; font-weight: bold; margin-top: 18pt; margin-bottom: 6pt; }
+h3 { font-size: 12pt; font-weight: bold; font-style: normal; margin-top: 12pt; margin-bottom: 6pt; }
+p { margin: 0 0 10pt 0; text-indent: 1.25cm; }
+p.noindent { text-indent: 0; }
+p.center { text-align: center; text-indent: 0; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 11pt;
+  margin: 6pt 0 12pt 0;
+}
+table, th, td { border: 1px solid black; }
+th, td { padding: 4pt 6pt; vertical-align: top; text-align: left; }
+th { background: #E7E6E6; text-align: center; font-weight: bold; }
+pre {
+  font-family: "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.15;
+  background: #F2F2F2;
+  border: 1px solid #BFBFBF;
+  padding: 8pt;
+  margin: 6pt 0 12pt 0;
+  white-space: pre-wrap;
+}
+p.caption { text-align: center; text-indent: 0; font-size: 11pt; margin-top: 2pt; }
+li { margin-bottom: 4pt; text-align: justify; }
+.cover { text-align: center; }
+.pagebreak { page-break-before: always; }
+</style>
+</head>
+<body>
+<div class="Section1">
+
+<!-- ============ HALAMAN JUDUL ============ -->
+<div class="cover">
+<p class="center" style="font-size:14pt; font-weight:bold; margin-top:36pt;">LAPORAN TUGAS AKHIR</p>
+<p class="center" style="font-size:14pt; font-weight:bold; margin-top:24pt;">RANCANG BANGUN SISTEM MANAJEMEN LABORATORIUM KOMPUTER TERPUSAT BERBASIS WEB DENGAN PEMBLOKIRAN SITUS SECARA REAL-TIME MENGGUNAKAN MEKANISME FILE HOSTS<br>(LABGUARD CLASSROOM MANAGEMENT)</p>
+<p class="center" style="margin-top:48pt;">Diajukan untuk Memenuhi Salah Satu Syarat<br>Mata Kuliah pada Program Studi Teknik Informatika</p>
+<p class="center" style="margin-top:60pt; font-weight:bold;">[LOGO PERGURUAN TINGGI]</p>
+<p class="center" style="margin-top:60pt;">Disusun oleh:</p>
+<p class="center" style="font-weight:bold;">[NAMA MAHASISWA]<br>NIM: [NOMOR INDUK MAHASISWA]</p>
+<p class="center" style="margin-top:72pt; font-weight:bold;">PROGRAM STUDI TEKNIK INFORMATIKA<br>FAKULTAS ILMU KOMPUTER<br>[NAMA PERGURUAN TINGGI]<br>2026</p>
+</div>
+
+<!-- ============ KATA PENGANTAR ============ -->
+<h1 class="bab">KATA PENGANTAR</h1>
+<p>Puji dan syukur penulis panjatkan ke hadirat Tuhan Yang Maha Esa atas segala rahmat dan karunia-Nya sehingga penulis dapat menyelesaikan laporan yang berjudul <b>“Rancang Bangun Sistem Manajemen Laboratorium Komputer Terpusat Berbasis Web dengan Pemblokiran Situs secara Real-Time Menggunakan Mekanisme File Hosts (LabGuard Classroom Management)”</b> dengan baik dan tepat pada waktunya.</p>
+<p>Laporan ini disusun sebagai bentuk pertanggungjawaban akademik atas pengembangan perangkat lunak yang telah penulis lakukan. Sistem yang dibangun bertujuan untuk membantu pengajar dalam mengelola dan mengawasi aktivitas penggunaan internet pada komputer siswa di laboratorium komputer, sehingga proses pembelajaran dapat berlangsung dengan lebih kondusif dan terarah.</p>
+<p>Dalam proses penyusunan laporan ini, penulis banyak memperoleh bimbingan, arahan, serta dukungan dari berbagai pihak. Oleh karena itu, pada kesempatan ini penulis mengucapkan terima kasih yang sebesar-besarnya kepada:</p>
+<ol style="margin-left:1.25cm;">
+<li>Bapak/Ibu [Nama Dosen Pembimbing] selaku dosen pembimbing yang telah memberikan bimbingan dan arahan selama proses pengembangan sistem;</li>
+<li>Orang tua dan keluarga yang senantiasa memberikan doa serta dukungan moril maupun materiil;</li>
+<li>Rekan-rekan mahasiswa yang telah membantu dalam proses pengujian sistem.</li>
+</ol>
+<p>Penulis menyadari bahwa laporan ini masih jauh dari kesempurnaan. Oleh karena itu, kritik dan saran yang bersifat membangun sangat penulis harapkan demi perbaikan di masa yang akan datang. Semoga laporan ini dapat memberikan manfaat bagi para pembaca serta bagi pengembangan ilmu pengetahuan dan teknologi.</p>
+<p class="noindent" style="text-align:right; margin-top:36pt;">[Kota], 11 Juli 2026<br><br><br>Penulis</p>
+
+<!-- ============ ABSTRAK ============ -->
+<h1 class="bab">ABSTRAK</h1>
+<p>Penggunaan internet yang tidak terkendali pada laboratorium komputer sekolah maupun perguruan tinggi kerap menjadi kendala dalam proses pembelajaran, karena siswa cenderung mengakses situs hiburan seperti media sosial, video streaming, dan permainan daring pada saat jam pelajaran berlangsung. Penelitian ini bertujuan untuk merancang dan membangun sebuah sistem manajemen laboratorium komputer terpusat bernama <i>LabGuard Classroom Management</i> yang memungkinkan pengajar memantau seluruh komputer siswa serta memblokir akses terhadap situs-situs tertentu secara <i>real-time</i> melalui satu dasbor web. Sistem dikembangkan dengan arsitektur <i>client-server</i> yang terdiri atas tiga komponen utama, yaitu: (1) aplikasi server berbasis Node.js dan Express yang menyediakan layanan REST API; (2) antarmuka dasbor guru berbasis React dan TypeScript; serta (3) program <i>agent</i> berbasis Python yang berjalan pada setiap komputer siswa. Mekanisme pemblokiran dilakukan dengan memodifikasi file <i>hosts</i> Windows secara otomatis, sehingga domain yang terdaftar pada <i>blacklist</i> dialihkan ke alamat lokal (127.0.0.1) dan tidak dapat diakses. Sinkronisasi status antara server dan <i>agent</i> dilakukan melalui mekanisme <i>polling</i> dengan interval lima detik. Hasil pengujian fungsional dengan metode <i>black box</i> menunjukkan bahwa seluruh fitur sistem berjalan sesuai dengan rancangan, meliputi pemantauan status komputer siswa, pengelolaan daftar <i>blacklist</i>, pemblokiran per komputer maupun menyeluruh, serta mekanisme pemulihan otomatis (<i>self-healing</i>) ketika koneksi ke server terputus. Sistem ini diharapkan dapat menjadi solusi praktis dan berbiaya rendah bagi institusi pendidikan dalam menciptakan lingkungan belajar berbasis komputer yang tertib dan terkendali.</p>
+<p class="noindent"><b>Kata kunci:</b> manajemen laboratorium komputer, pemblokiran situs, file hosts, client-server, REST API, React, Python.</p>
+
+<!-- ============ DAFTAR ISI ============ -->
+<h1 class="bab">DAFTAR ISI</h1>
+<p class="noindent">HALAMAN JUDUL<br>
+KATA PENGANTAR<br>
+ABSTRAK<br>
+DAFTAR ISI<br>
+<b>BAB I PENDAHULUAN</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.1 Latar Belakang<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.2 Rumusan Masalah<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.3 Batasan Masalah<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.4 Tujuan Penelitian<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.5 Manfaat Penelitian<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.6 Sistematika Penulisan<br>
+<b>BAB II LANDASAN TEORI</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.1 Laboratorium Komputer dan Manajemen Kelas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.2 Arsitektur Client-Server<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.3 REST API (Representational State Transfer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.4 Sistem Resolusi Nama Domain dan File Hosts<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.5 Teknologi Pengembangan yang Digunakan<br>
+<b>BAB III ANALISIS DAN PERANCANGAN SISTEM</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.1 Analisis Masalah<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.2 Analisis Kebutuhan Sistem<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.3 Arsitektur Sistem<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.4 Perancangan Alur Kerja Sistem<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.5 Perancangan Antarmuka Pemrograman (API)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.6 Perancangan Struktur Data<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.7 Perancangan Antarmuka Pengguna<br>
+<b>BAB IV IMPLEMENTASI DAN PENGUJIAN</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.1 Lingkungan Implementasi<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.2 Implementasi Sisi Server<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.3 Implementasi Antarmuka Dasbor Guru<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.4 Implementasi Agent PC Siswa<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.5 Pengujian Sistem<br>
+<b>BAB V PENUTUP</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.1 Kesimpulan<br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.2 Saran<br>
+<b>DAFTAR PUSTAKA</b></p>
+
+<!-- ============ BAB I ============ -->
+<h1 class="bab">BAB I</h1>
+<h1 class="judulbab">PENDAHULUAN</h1>
+
+<h2>1.1 Latar Belakang</h2>
+<p>Perkembangan teknologi informasi telah mendorong hampir seluruh institusi pendidikan untuk menyediakan laboratorium komputer yang terhubung dengan jaringan internet sebagai sarana penunjang pembelajaran. Kehadiran internet di ruang laboratorium memberikan kemudahan bagi siswa dalam mengakses sumber belajar, mengerjakan tugas praktikum, serta mengikuti pembelajaran berbasis daring. Namun demikian, akses internet yang terbuka tanpa pengawasan juga menimbulkan permasalahan tersendiri, yakni kecenderungan siswa untuk mengakses konten yang tidak berhubungan dengan materi pembelajaran, seperti media sosial, layanan <i>video streaming</i>, dan permainan daring pada saat jam pelajaran berlangsung.</p>
+<p>Kondisi tersebut menyulitkan pengajar dalam mengendalikan jalannya kegiatan praktikum. Pengawasan secara manual dengan berkeliling ruangan tidaklah efektif, terutama pada laboratorium dengan jumlah komputer yang banyak. Di sisi lain, solusi komersial berupa perangkat lunak <i>classroom management</i> maupun perangkat keras <i>firewall</i> jaringan umumnya memerlukan biaya lisensi yang tidak sedikit dan konfigurasi yang kompleks, sehingga tidak semua institusi pendidikan mampu mengadopsinya.</p>
+<p>Berdasarkan permasalahan tersebut, diperlukan sebuah sistem manajemen laboratorium komputer yang sederhana, berbiaya rendah, dan mudah dioperasikan oleh pengajar. Salah satu pendekatan teknis yang dapat dimanfaatkan adalah mekanisme resolusi nama domain lokal melalui file <i>hosts</i> pada sistem operasi Windows. Dengan menambahkan entri pemetaan domain ke alamat lokal (127.0.0.1), sebuah komputer dapat dicegah untuk mengakses situs tertentu tanpa memerlukan perangkat jaringan tambahan.</p>
+<p>Atas dasar pemikiran itulah penulis merancang dan membangun sistem <b>LabGuard Classroom Management</b>, yaitu sistem manajemen laboratorium komputer terpusat berbasis web yang memungkinkan pengajar memantau status seluruh komputer siswa, mengelola daftar situs terlarang (<i>blacklist</i>), serta mengaktifkan dan menonaktifkan pemblokiran secara <i>real-time</i> dari satu dasbor. Sistem ini memadukan aplikasi server berbasis Node.js dan Express, antarmuka web berbasis React dan TypeScript, serta program <i>agent</i> berbasis Python yang berjalan pada setiap komputer siswa.</p>
+
+<h2>1.2 Rumusan Masalah</h2>
+<p class="noindent">Berdasarkan latar belakang yang telah diuraikan, rumusan masalah dalam penelitian ini adalah sebagai berikut:</p>
+<ol style="margin-left:1.25cm;">
+<li>Bagaimana merancang dan membangun sistem manajemen laboratorium komputer terpusat yang memungkinkan pengajar memantau seluruh komputer siswa melalui satu dasbor web?</li>
+<li>Bagaimana menerapkan mekanisme pemblokiran situs pada komputer siswa secara <i>real-time</i> dengan memanfaatkan modifikasi file <i>hosts</i> Windows?</li>
+<li>Bagaimana menjamin sinkronisasi status antara server pada komputer guru dan <i>agent</i> pada komputer siswa, serta pemulihan otomatis apabila koneksi terputus?</li>
+</ol>
+
+<h2>1.3 Batasan Masalah</h2>
+<p class="noindent">Agar pembahasan lebih terarah, penelitian ini dibatasi pada hal-hal berikut:</p>
+<ol style="margin-left:1.25cm;">
+<li>Sistem dirancang untuk digunakan pada jaringan lokal (LAN) laboratorium komputer, dengan satu komputer guru sebagai server dan sejumlah komputer siswa sebagai klien.</li>
+<li>Mekanisme pemblokiran diimplementasikan melalui modifikasi file <i>hosts</i> pada sistem operasi Windows, sehingga <i>agent</i> memerlukan hak akses Administrator.</li>
+<li>Pemblokiran dilakukan berdasarkan nama domain yang terdaftar pada <i>blacklist</i>, bukan berdasarkan alamat IP maupun inspeksi paket jaringan.</li>
+<li>Penyimpanan data pada sisi server menggunakan basis data berbasis berkas JSON, tanpa s

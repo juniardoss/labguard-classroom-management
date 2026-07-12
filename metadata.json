@@ -1,0 +1,6 @@
+{
+  "name": "LabGuard Classroom Management",
+  "description": "Sistem manajemen lab komputer terpusat untuk PC Guru dan PC Siswa dengan pemblokiran website berbasis file hosts Windows secara real-time.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

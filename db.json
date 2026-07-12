@@ -1,0 +1,37 @@
+{
+  "session": {
+    "sessionActive": false,
+    "sessionStartTime": null,
+    "targetAll": true,
+    "targetClients": [
+      "PC-03",
+      "PC-01",
+      "HYPE"
+    ]
+  },
+  "blacklist": [
+    "youtube.com",
+    "www.youtube.com"
+  ],
+  "realClients": {
+    "HYPE": {
+      "pcName": "HYPE",
+      "ip": "192.168.0.123",
+      "lastSeen": 1783606973872,
+      "status": "Online"
+    },
+    "Siahaan": {
+      "pcName": "Siahaan",
+      "ip": "172.31.16.34",
+      "lastSeen": 1783743219226,
+      "status": "Online"
+    },
+    "DESKTOP-ROT559M": {
+      "pcName": "DESKTOP-ROT559M",
+      "ip": "10.186.63.103",
+      "lastSeen": 1783857597048,
+      "status": "Online"
+    }
+  },
+  "useSimulation": false
+}
