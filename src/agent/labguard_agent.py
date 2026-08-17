@@ -15,6 +15,7 @@ import socket
 import json
 import urllib.request
 import urllib.error
+import urllib.parse
 import subprocess
 import ctypes
 import tempfile
@@ -133,13 +134,25 @@ def update_hosts(blacklist):
 
         # Buat entri pemblokiran baru
         new_block = []
+        if new_lines and not new_lines[-1].endswith('\n'):
+            new_lines[-1] = new_lines[-1] + '\n'
         new_block.append(f"{HOSTS_MARKER_START}\n")
         new_block.append(f"# Pemblokiran aktif oleh LabGuard - {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
         for domain in blacklist:
             domain_clean = domain.strip().lower()
             if domain_clean:
-                # Blokir domain utama
-                new_block.append(f"127.0.0.1 {domain_clean}\n")
+                # Menangani www dan non-www secara otomatis
+                base_domain = domain_clean[4:] if domain_clean.startswith("www.") else domain_clean
+                www_domain = f"www.{base_domain}"
+                
+                # Blokir domain utama (IPv4 dan IPv6)
+                new_block.append(f"127.0.0.1 {base_domain}\n")
+                new_block.append(f"::1 {base_domain}\n")
+                
+                # Blokir versi www (IPv4 dan IPv6)
+                new_block.append(f"127.0.0.1 {www_domain}\n")
+                new_block.append(f"::1 {www_domain}\n")
+                
         new_block.append(f"{HOSTS_MARKER_END}\n")
 
         # Tulis kembali ke file hosts
@@ -398,6 +411,9 @@ def main():
     
     # Track if we are currently blocking
     is_currently_blocking = False
+    
+    connection_failures = 0
+    MAX_FAILURES_BEFORE_UNBLOCK = 5
 
     while True:
         try:
@@ -416,6 +432,9 @@ def main():
             blacklist = data.get("blacklist", [])
             target_all = data.get("target_all", True)
             is_targeted = data.get("is_targeted", True)
+
+            # Reset connection failures on success
+            connection_failures = 0
 
             # Skenario 1: Sesi aktif dan PC ini termasuk target pemblokiran
             should_block = session_active and is_targeted
@@ -449,14 +468,16 @@ def main():
 
         except urllib.error.URLError as e:
             # Server offline atau tidak terjangkau
-            sys.stdout.write(f"\r[{time.strftime('%H:%M:%S')}] [KONEKSI GAGAL] Tidak dapat menghubungi PC Guru ({e.reason}). Mencoba lagi...")
+            connection_failures += 1
+            sys.stdout.write(f"\r[{time.strftime('%H:%M:%S')}] [KONEKSI GAGAL] Tidak dapat menghubungi PC Guru ({e.reason}). Percobaan {connection_failures}/{MAX_FAILURES_BEFORE_UNBLOCK}...")
             sys.stdout.flush()
-            # Jika server mati, demi keamanan kembalikan hosts ke normal dulu agar siswa tidak terputus selamanya jika pelajaran selesai mendadak
-            if is_currently_blocking:
-                print("\n[!] Hubungan dengan server terputus. Mencabut blokir demi keamanan...")
-                clear_hosts()
-                is_currently_blocking = False
-                last_blacklist = []
+            # Jika server mati lama, demi keamanan kembalikan hosts ke normal dulu agar siswa tidak terputus selamanya jika pelajaran selesai mendadak
+            if connection_failures >= MAX_FAILURES_BEFORE_UNBLOCK:
+                if is_currently_blocking:
+                    print("\n[!] Hubungan dengan server terputus lama. Mencabut blokir demi keamanan...")
+                    clear_hosts()
+                    is_currently_blocking = False
+                    last_blacklist = []
                 
         except Exception as e:
             sys.stdout.write(f"\r[{time.strftime('%H:%M:%S')}] [ERROR] Terjadi kesalahan: {e}")

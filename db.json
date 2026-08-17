@@ -11,7 +11,8 @@
   },
   "blacklist": [
     "youtube.com",
-    "www.youtube.com"
+    "www.youtube.com",
+    "savefrom.co"
   ],
   "realClients": {
     "HYPE": {
@@ -22,14 +23,20 @@
     },
     "Siahaan": {
       "pcName": "Siahaan",
-      "ip": "172.31.16.34",
-      "lastSeen": 1783743219226,
+      "ip": "192.168.30.98",
+      "lastSeen": 1785307701561,
       "status": "Online"
     },
     "DESKTOP-ROT559M": {
       "pcName": "DESKTOP-ROT559M",
       "ip": "10.186.63.103",
-      "lastSeen": 1783857597048,
+      "lastSeen": 1783857914790,
+      "status": "Online"
+    },
+    "LAPTOP-OVJNRE88": {
+      "pcName": "LAPTOP-OVJNRE88",
+      "ip": "10.35.117.111",
+      "lastSeen": 1786332335633,
       "status": "Online"
     }
   },

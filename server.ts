@@ -266,7 +266,10 @@ async function startServer() {
 
         // Jika PC ini sudah ada sebagai PC riil, lewati agar tidak dobel
         if (activeRealClients[pcName]) {
-          list.push(activeRealClients[pcName]);
+          list.push({
+            ...activeRealClients[pcName],
+            isTargeted: db.session.targetAll || db.session.targetClients.includes(pcName)
+          });
           continue;
         }
 
@@ -292,6 +295,17 @@ async function startServer() {
           isTargeted: db.session.targetAll || db.session.targetClients.includes(pcName)
         });
       }
+
+      // Tambahkan client riil lain yang namanya bukan bagian dari PC-01 s/d PC-20
+      Object.values(activeRealClients).forEach((info) => {
+        const isSimulatedName = /^PC-(0[1-9]|1[0-9]|20)$/.test(info.pcName);
+        if (!isSimulatedName) {
+          list.push({
+            ...info,
+            isTargeted: db.session.targetAll || db.session.targetClients.includes(info.pcName)
+          });
+        }
+      });
     } else {
       // Hanya tampilkan PC riil
       Object.values(activeRealClients).forEach((info) => {
